@@ -32,7 +32,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm);
             funct3 = instruction[14:12];
             rs1 = instruction[19:15];
             
-            imm = {{20{instruction[31]}}, instruction[31:20]};
+            imm = {{20{instruction[31]}}, instruction[31:20]};//"{20{instruction[31]" is used for sign extention. The "20" represents the amount of bits to add to the end based on if instruction[31] is 0 or 1
 
        end
        
@@ -66,6 +66,8 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm);
             rs1 = instruction[19:15];
             rs2 = instruction[24:20];
             funct7 = instruction[31:25];
+            
+            imm = {{19{instruction[31]}}, instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
        end
       
     end
