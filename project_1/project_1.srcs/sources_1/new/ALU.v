@@ -1,11 +1,14 @@
-module ALU (
-    input  wire [31:0] a,      // Operand A
-    input  wire [31:0] b,      // Operand B
-    input  wire [3:0]  alu_ctrl, // ALU Control Signal
-    output reg  [31:0] result, // ALU Result
-    output wire        zero    // Zero Flag
-);
+module ALU (a,b,alu_ctrl,result,zero);
 
+    input  wire [31:0] a;
+    input  wire [31:0] b;
+    input  wire [3:0]  alu_ctrl;
+    output reg [31:0] result;
+    output wire zero;
+    
+    
+    initial result = 0;
+    
     always @(*) begin
         case (alu_ctrl)
             4'b0000: result = a + b;        // ADD

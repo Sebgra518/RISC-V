@@ -8,8 +8,6 @@ module RISCV(input wire clk);
     wire [3:0] alu_ctrl;
     
     
-    
-    
     ProgramCounter(clk,0,count_out);
     ProgramMemory(count_out,program_out);
     InstructionDecode(program_out,funct7,rs2,rs1,funct3,rd,opcode,imm);

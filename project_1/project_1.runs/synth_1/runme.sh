@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ReCirculatingCalculator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ReCirculatingCalculator.tcl
+EAStep vivado -log RISCV.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISCV.tcl

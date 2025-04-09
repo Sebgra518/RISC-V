@@ -11,12 +11,21 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm);
     output reg [6:0] opcode;
     output reg [31:0] imm;
     
+    initial begin
+        funct7 = 0;
+        rs2 = 0;
+        rs1 = 0;
+        funct3 = 0;
+        rd = 0;
+        opcode = 0;
+        imm = 0;
+    end
+    
 
     always @ * begin
         
         opcode  = instruction[6:0];
-       
-       
+      
        //R Type
        if((instruction[6:2] == 5'b01_011) || (instruction[6:2] == 5'b01_100) || (instruction[6:2] == 5'b01_110) || (instruction[6:2] == 5'b10_100)) begin
             rd = instruction[11:7];

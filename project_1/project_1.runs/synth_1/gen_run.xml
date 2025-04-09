@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1741152441" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/adder.dcp">
-  <File Type="PA-TCL" Name="ReCirculatingCalculator.tcl"/>
-  <File Type="REPORTS-TCL" Name="ReCirculatingCalculator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ReCirculatingCalculator.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="ReCirculatingCalculator_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="ReCirculatingCalculator_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ReCirculatingCalculator_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ReCirculatingCalculator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ReCirculatingCalculator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ReCirculatingCalculator_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1744233051" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/adder.dcp">
+  <File Type="PA-TCL" Name="RISCV.tcl"/>
+  <File Type="REPORTS-TCL" Name="RISCV_reports.tcl"/>
+  <File Type="RDS-RDS" Name="RISCV.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="RISCV_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="RISCV_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="RISCV_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="RISCV.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="RISCV_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="RISCV_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/ReCirculatingCalculator.v">
+    <File Path="$PSRCDIR/sources_1/new/ALU.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ALUControl.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/InstructionDecode.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ProgramCounter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ProgramMemory.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RISCV.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/RegisterFileRead.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -20,7 +63,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ReCirculatingCalculator"/>
+      <Option Name="TopModule" Val="RISCV"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
@@ -45,9 +88,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

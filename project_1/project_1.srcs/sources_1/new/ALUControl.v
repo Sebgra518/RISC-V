@@ -1,4 +1,14 @@
-module ALUControl (input  wire [6:0] funct7,input  wire [2:0] funct3,input  wire [6:0] opcode,output reg  [3:0] alu_ctrl);
+module ALUControl (funct7,funct3,opcode,alu_ctrl);
+
+    input  wire [6:0] funct7;
+    input  wire [2:0] funct3;
+    input  wire [6:0] opcode;
+    output reg  [3:0] alu_ctrl;
+
+    initial begin
+        alu_ctrl = 0;
+    end
+
 
     always @(*) begin
         case (opcode)
