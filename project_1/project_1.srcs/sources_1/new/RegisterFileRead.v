@@ -1,20 +1,17 @@
-module RegisterFileRead (
-    input clk,
-    input reset,
-    
-    input write_enable,  
-    input [4:0] write_address,
-    input [31:0] write_data,
-    
-    input read_enable_1,                     // Read enable for rs1
-    input [4:0] read_address_1,          // Read source 1 address
-    output reg [31:0] read_data_1,    // Data read from source 1
-     
-    input read_enable_2,                     // Read enable for rs2
-    input [4:0] read_address_2,          // Read source 2 address
-    output reg [31:0] read_data_2     // Data read from source 2
-);
+module RegisterFileRead (clk,reset,write_enable,write_address,write_data,read_enable_1,read_address_1,read_data_1,read_enable_2,read_address_2,read_data_2);
 
+    input clk;
+    input reset;
+    input write_enable;
+    input [4:0] write_address;
+    input [31:0] write_data;
+    input read_enable_1;
+    input [4:0] read_address_1;
+    output reg [31:0] read_data_1;
+    input read_enable_2;
+    input [4:0] read_address_2;
+    output reg [31:0] read_data_2;
+    
     reg [31:0] regs[0:31];
     integer i;
 

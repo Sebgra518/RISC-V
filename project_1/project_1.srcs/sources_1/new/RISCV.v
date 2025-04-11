@@ -7,14 +7,18 @@ module RISCV(input wire clk);
     wire [2:0] funct3;
     wire [3:0] alu_ctrl;
     
+    reg reset = 0;
     
-    ProgramCounter(clk,0,count_out);
-    ProgramMemory(count_out,program_out);
-    InstructionDecode(program_out,funct7,rs2,rs1,funct3,rd,opcode,imm);
+    ProgramCounter PC(clk,reset,count_out);
     
-    ALUControl(funct7,funct3,opcode,alu_ctrl);
+    ProgramMemory PM(count_out,program_out);
+    InstructionDecode ID(program_out,funct7,rs2,rs1,funct3,rd,opcode,imm);
     
-    ALU(inputA,inputB,alu_ctrl,result,zero);
+    RegisterFileRead RFR(clk,reset,1,rs1,imm,read_enable_1,read_address_1,read_data_1,read_enable_2,read_address_2,read_data_2);
+    
+    ALUControl ALUC(funct7,funct3,opcode,alu_ctrl);
+    
+    ALU ALU(inputA,inputB,alu_ctrl,result,zero);
     
     
     
