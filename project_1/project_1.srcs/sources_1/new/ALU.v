@@ -1,10 +1,9 @@
-module ALU (a,b,alu_ctrl,result,zero);
+module ALU (a,b,alu_ctrl,result);
 
     input  wire [31:0] a;
     input  wire [31:0] b;
     input  wire [3:0]  alu_ctrl;
     output reg [31:0] result;
-    output wire zero;
     
     
     initial result = 0;
@@ -24,7 +23,5 @@ module ALU (a,b,alu_ctrl,result,zero);
             default: result = 32'b0; // Default case
         endcase
     end
-
-    assign zero = (result == 32'b0) ? 1'b1 : 1'b0; // Zero flag
 
 endmodule

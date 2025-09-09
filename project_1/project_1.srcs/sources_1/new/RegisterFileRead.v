@@ -15,6 +15,13 @@ module RegisterFileRead (clk,reset,write_enable,write_address,write_data,read_en
     reg [31:0] regs[0:31];
     integer i;
 
+
+    initial begin
+        read_data_1 = 0;
+        read_data_2 = 0;
+    end
+
+
     // Synchronous write and reset
     always @(posedge clk) begin
         if (reset) begin

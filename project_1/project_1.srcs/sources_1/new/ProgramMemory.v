@@ -20,7 +20,7 @@ module ProgramMemory(address, programOut);
            32'd8:  programOut = 32'h00000009;
            32'd9:  programOut = 32'h0000000A;
            32'd10:  programOut = 32'h0000000B;
-          
+          default: programOut = 0;
         endcase
     end
 endmodule

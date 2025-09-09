@@ -1,22 +1,20 @@
 `timescale 1ns / 1ps
 
 module sim();
-    reg [31:0] instruction;
-    wire [7:0] funct7;
-    wire[4:0] rs2;
-    wire [4:0] rs1;
-    wire [2:0] funct3;
-    wire [4:0] rd;
-    wire [6:0] opcode;
-    wire [31:0] imm;
+    reg clk;
+    wire [31:0] debug_pc;
+    wire [31:0] debug_instruction;
+    wire [31:0] debug_imm;
+    wire [6:0] debug_funct7, debug_opcode;
+    wire [4:0]  debug_rs1, debug_rs2, debug_rd;
+    wire [2:0] debug_funct3;
     
     initial begin
-        instruction = 32'b00000000011100110000001010110011;
+        clk = 0;
     end
+        
+    always #1 clk = ~clk;  // Toggle clock every 10 time units (50 MHz)
     
-    
-    //always #1 count_out = ~count_out;  // Toggle clock every 10 time units (50 MHz)
-    
-    InstructionDecode ID(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm);
+    RISCV RISCV(clk,debug_pc,debug_instruction,debug_imm,debug_funct7, debug_opcode,debug_rs1, debug_rs2, debug_rd,debug_funct3);
     
 endmodule

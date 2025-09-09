@@ -5,9 +5,7 @@ module ALUControl (funct7,funct3,opcode,alu_ctrl);
     input  wire [6:0] opcode;
     output reg  [3:0] alu_ctrl;
 
-    initial begin
-        alu_ctrl = 0;
-    end
+    initial alu_ctrl = 0;
 
 
     always @(*) begin

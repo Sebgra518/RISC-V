@@ -56,7 +56,6 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -74,9 +73,11 @@ OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALU.v}
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALUControl.v}
+  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/BranchCompare.v}
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v}
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v}
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v}
+  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v}
   {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v}
 }
 OPTRACE "Adding files" END { }
