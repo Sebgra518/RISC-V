@@ -7,6 +7,10 @@ module RISCV(
     , output wire [6:0] debug_funct7, debug_opcode
     , output wire [4:0]  debug_rs1, debug_rs2, debug_rd
     , output wire [2:0] debug_funct3
+    , output wire [3:0] debug_alu_ctrl
+    , output wire [31:0] debug_ALU
+    , output wire debug_IType
+    , output wire [31:0] debug_read_data_1, debug_read_data_2
 );
 
     // Reset: keep a single declaration; drive it somehow in real HW (input or POR)
@@ -27,6 +31,8 @@ module RISCV(
     // ALU
     wire [3:0]  alu_ctrl;
     (* mark_debug = "true" *) wire [31:0] alu_out;
+
+    wire IType;
 
     // =========================================================================
     // Minimal next-PC so PC advances (prevents X/pruning). Replace with your
@@ -71,11 +77,13 @@ module RISCV(
     // NOTE: write_enable=0 disables writes; consider driving it from control.
     RegisterFileRead u_rfr (
         .clk            (clk),
-        .write_enable   (1'b0),
+        .write_enable   ((IType) ? 1'b1 : 1'b0),
         .write_address  (rd),
         .write_data     (alu_out),
+        .read_enable_1 ((IType) ? 1'b0 : 1'b1),
         .read_address_1 (rs1),
         .read_data_1    (read_data_1),
+        .read_enable_2 ((IType) ? 1'b0 : 1'b1),
         .read_address_2 (rs2),
         .read_data_2    (read_data_2)
     );
@@ -85,13 +93,14 @@ module RISCV(
         .funct7   (funct7),
         .funct3   (funct3),
         .opcode   (opcode),
-        .alu_ctrl (alu_ctrl)
+        .alu_ctrl (alu_ctrl),
+        .IType (IType)
     );
 
     // ALU
     ALU u_alu (
         .a        (read_data_1),
-        .b        (read_data_2),   // consider muxing in IMM when needed
+        .b        ((IType) ? imm : read_data_2),   // consider muxing in IMM when needed
         .alu_ctrl (alu_ctrl),
         .result   (alu_out)
     );
@@ -118,6 +127,11 @@ module RISCV(
     assign debug_rs2 = rs2;
     assign debug_funct3 = funct3;
     assign debug_imm = imm;
+    assign debug_ALU = alu_out;
+    assign debug_alu_ctrl = alu_ctrl;
+    assign debug_IType = IType;
+    assign debug_read_data_1 = read_data_1;
+    assign debug_read_data_2 = read_data_2;
 
 endmodule
 

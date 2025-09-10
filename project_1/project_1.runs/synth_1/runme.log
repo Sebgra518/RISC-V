@@ -8,55 +8,53 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Sep  9 14:08:13 2025
+  **** Start of session at: Tue Sep  9 19:46:39 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source RISCV.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp}
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp for incremental synthesis
+Command: read_checkpoint -auto_incremental -incremental E:/Github/RISC-V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from E:/Github/RISC-V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top RISCV -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 14292
+INFO: [Synth 8-7075] Helper process launched with PID 8240
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 812.477 ; gain = 474.062
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 808.145 ; gain = 474.594
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'RISCV' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:4]
-INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ProgramMemory' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'ProgramMemory' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v:3]
-INFO: [Synth 8-6157] synthesizing module 'InstructionDecode' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'InstructionDecode' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v:3]
-WARNING: [Synth 8-689] width (7) of port connection 'funct7' does not match port width (8) of module 'InstructionDecode' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:61]
-WARNING: [Synth 8-7071] port 'is_b' of module 'InstructionDecode' is unconnected for instance 'u_id' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:59]
-WARNING: [Synth 8-7071] port 'is_b_code' of module 'InstructionDecode' is unconnected for instance 'u_id' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:59]
-WARNING: [Synth 8-7023] instance 'u_id' of module 'InstructionDecode' has 10 connections declared, but only 8 given [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:59]
-INFO: [Synth 8-6157] synthesizing module 'RegisterFileRead' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RegisterFileRead' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v:1]
-WARNING: [Synth 8-7071] port 'reset' of module 'RegisterFileRead' is unconnected for instance 'u_rfr' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:72]
-WARNING: [Synth 8-7071] port 'read_enable_1' of module 'RegisterFileRead' is unconnected for instance 'u_rfr' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:72]
-WARNING: [Synth 8-7071] port 'read_enable_2' of module 'RegisterFileRead' is unconnected for instance 'u_rfr' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:72]
-WARNING: [Synth 8-7023] instance 'u_rfr' of module 'RegisterFileRead' has 11 connections declared, but only 8 given [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:72]
-INFO: [Synth 8-6157] synthesizing module 'ALUControl' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALUControl.v:1]
-INFO: [Synth 8-226] default block is never used [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALUControl.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALUControl.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALU.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALU.v:1]
-INFO: [Synth 8-6157] synthesizing module 'BranchCompare' [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/BranchCompare.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'BranchCompare' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/BranchCompare.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'RISCV' (0#1) [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:4]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_pc'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:45]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_pm'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:53]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_id'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:59]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_bc'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:103]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_alu'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:92]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_rfr'. This will prevent further optimization [C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v:72]
+INFO: [Synth 8-6157] synthesizing module 'RISCV' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ProgramCounter' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramCounter' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ProgramMemory' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ProgramMemory' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v:3]
+INFO: [Synth 8-6157] synthesizing module 'InstructionDecode' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionDecode' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v:3]
+WARNING: [Synth 8-689] width (7) of port connection 'funct7' does not match port width (8) of module 'InstructionDecode' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:67]
+WARNING: [Synth 8-7071] port 'is_b' of module 'InstructionDecode' is unconnected for instance 'u_id' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:65]
+WARNING: [Synth 8-7071] port 'is_b_code' of module 'InstructionDecode' is unconnected for instance 'u_id' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:65]
+WARNING: [Synth 8-7023] instance 'u_id' of module 'InstructionDecode' has 10 connections declared, but only 8 given [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:65]
+INFO: [Synth 8-6157] synthesizing module 'RegisterFileRead' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RegisterFileRead' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ALUControl' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALUControl.v:1]
+INFO: [Synth 8-226] default block is never used [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALUControl.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'ALUControl' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALUControl.v:1]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALU.v:1]
+INFO: [Synth 8-6157] synthesizing module 'BranchCompare' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/BranchCompare.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'BranchCompare' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/BranchCompare.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'RISCV' (0#1) [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:4]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_pc'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:51]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_pm'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:59]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_id'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:65]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_bc'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:112]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_alu'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:101]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_rfr'. This will prevent further optimization [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v:78]
 WARNING: [Synth 8-7129] Port imm[31] in module BranchCompare is either unconnected or has no load
 WARNING: [Synth 8-7129] Port imm[30] in module BranchCompare is either unconnected or has no load
 WARNING: [Synth 8-7129] Port imm[29] in module BranchCompare is either unconnected or has no load
@@ -90,42 +88,23 @@ WARNING: [Synth 8-7129] Port imm[2] in module BranchCompare is either unconnecte
 WARNING: [Synth 8-7129] Port imm[1] in module BranchCompare is either unconnected or has no load
 WARNING: [Synth 8-7129] Port imm[0] in module BranchCompare is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 922.246 ; gain = 583.832
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 915.816 ; gain = 582.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 922.246 ; gain = 583.832
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 915.816 ; gain = 582.266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 922.246 ; gain = 583.832
----------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Start Preparing Guide Design
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 915.816 ; gain = 582.266
 ---------------------------------------------------------------------------------
-CRITICAL WARNING: [Synth 8-6895] The reference checkpoint C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp is not suitable for use with incremental synthesis for this design. Please regenerate the checkpoint for this design with -incremental_synth switch in the same Vivado session that synth_design has been run. Synthesis will continue with the default flow
+WARNING: [Synth 8-327] inferring latch for variable 'IType_reg' [E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALUControl.v:17]
 ---------------------------------------------------------------------------------
-Finished Doing Graph Differ : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 922.246 ; gain = 583.832
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 915.816 ; gain = 582.266
 ---------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Preparing Guide Design : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 922.246 ; gain = 583.832
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 922.246 ; gain = 583.832
----------------------------------------------------------------------------------
-
-
-Incremental Synthesis Report Summary:
-
-1. Incremental synthesis run: no
-
-   Reason for not running incremental synthesis : 
-
-
-INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -137,9 +116,11 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 33    
+	               32 Bit    Registers := 1     
++---RAMs : 
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 8     
 	   3 Input   32 Bit        Muxes := 1     
 	   2 Input   24 Bit        Muxes := 1     
 	   5 Input    7 Bit        Muxes := 1     
@@ -152,7 +133,8 @@ Detailed RTL Component Info :
 	   8 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 7     
 	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 32    
+	   2 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -203,20 +185,49 @@ WARNING: [Synth 8-7129] Port imm[2] in module BranchCompare is either unconnecte
 WARNING: [Synth 8-7129] Port imm[1] in module BranchCompare is either unconnected or has no load
 WARNING: [Synth 8-7129] Port imm[0] in module BranchCompare is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1159.082 ; gain = 820.668
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1143.375 ; gain = 809.824
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|u_rfr       | regs_reg   | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1167.945 ; gain = 829.531
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1152.227 ; gain = 818.676
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|u_rfr       | regs_reg   | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1167.945 ; gain = 829.531
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1152.227 ; gain = 818.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -233,41 +244,38 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3295] tying undriven pin u_rfr:reset to constant 0
-WARNING: [Synth 8-3295] tying undriven pin u_rfr:read_enable_1 to constant 0
-WARNING: [Synth 8-3295] tying undriven pin u_rfr:read_enable_2 to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -280,59 +288,63 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    32|
-|3     |LUT1   |    18|
-|4     |LUT2   |    66|
-|5     |LUT3   |    24|
-|6     |LUT4   |   101|
-|7     |LUT5   |   119|
-|8     |LUT6   |   564|
-|9     |MUXF7  |   130|
-|10    |MUXF8  |    64|
-|11    |FDCE   |    32|
-|12    |FDRE   |  1024|
-|13    |IBUF   |     1|
-|14    |OBUF   |   128|
-+------+-------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    32|
+|3     |LUT1     |    20|
+|4     |LUT2     |    68|
+|5     |LUT3     |    54|
+|6     |LUT4     |   102|
+|7     |LUT5     |    57|
+|8     |LUT6     |   339|
+|9     |MUXF7    |     2|
+|10    |RAM32M   |    10|
+|11    |RAM32X1D |     4|
+|12    |FDCE     |    32|
+|13    |LD       |     1|
+|14    |IBUF     |     1|
+|15    |OBUF     |   229|
++------+---------+------+
 
 Report Instance Areas: 
-+------+---------+------------------+------+
-|      |Instance |Module            |Cells |
-+------+---------+------------------+------+
-|1     |top      |                  |  2304|
-|2     |  u_pc   |ProgramCounter    |    32|
-|3     |  u_pm   |ProgramMemory     |    18|
-|4     |  u_id   |InstructionDecode |    65|
-|5     |  u_rfr  |RegisterFileRead  |  1569|
-|6     |  u_alu  |ALU               |   447|
-+------+---------+------------------+------+
++------+------------+------------------+------+
+|      |Instance    |Module            |Cells |
++------+------------+------------------+------+
+|1     |top         |                  |   952|
+|2     |  u_pc      |ProgramCounter    |    32|
+|3     |  u_pm      |ProgramMemory     |    15|
+|4     |  u_id      |InstructionDecode |    65|
+|5     |  u_rfr     |RegisterFileRead  |    85|
+|6     |  u_alu     |ALU               |   449|
+|7     |  u_aluctrl |ALUControl        |    36|
++------+------------+------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 1 critical warnings and 76 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1321.352 ; gain = 982.938
+Synthesis finished with 0 errors, 0 critical warnings and 70 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1314.352 ; gain = 980.801
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1336.410 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 226 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1329.426 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 49 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1448.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1443.086 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 15 instances were transformed.
+  LD => LDCE: 1 instance 
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
 
-Synth Design complete | Checksum: 888d94f5
+Synth Design complete | Checksum: f4567add
 INFO: [Common 17-83] Releasing license: Synthesis
-38 Infos, 76 Warnings, 1 Critical Warnings and 0 Errors encountered.
+39 Infos, 70 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1448.914 ; gain = 1115.695
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1448.914 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.runs/synth_1/RISCV.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1443.086 ; gain = 1114.766
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1443.086 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'E:/Github/RISC-V/project_1/project_1.runs/synth_1/RISCV.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file RISCV_utilization_synth.rpt -pb RISCV_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Sep  9 14:08:45 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  9 19:47:02 2025...

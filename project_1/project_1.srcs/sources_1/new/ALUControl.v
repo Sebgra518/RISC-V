@@ -1,16 +1,20 @@
-module ALUControl (funct7,funct3,opcode,alu_ctrl);
+module ALUControl (funct7,funct3,opcode,alu_ctrl,IType);
 
     input  wire [6:0] funct7;
     input  wire [2:0] funct3;
     input  wire [6:0] opcode;
     output reg  [3:0] alu_ctrl;
+    output reg IType;
 
-    initial alu_ctrl = 0;
-
+    initial begin
+        alu_ctrl = 4'b0000;
+        IType    = 1'b0;
+    end
 
     always @(*) begin
         case (opcode)
             7'b0110011: begin // R-type instructions
+                IType = 0;
                 case ({funct7, funct3})
                     10'b0000000000: alu_ctrl = 4'b0000; // ADD
                     10'b0100000000: alu_ctrl = 4'b0001; // SUB
@@ -26,6 +30,7 @@ module ALUControl (funct7,funct3,opcode,alu_ctrl);
                 endcase
             end
             7'b0010011: begin // I-type ALU instructions
+                IType = 1;
                 case (funct3)
                     3'b000: alu_ctrl = 4'b0000; // ADDI
                     3'b111: alu_ctrl = 4'b0010; // ANDI

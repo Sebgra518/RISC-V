@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.runs/synth_1/RISCV.tcl"
+  variable script "E:/Github/RISC-V/project_1/project_1.runs/synth_1/RISCV.tcl"
   variable category "vivado_synth"
 }
 
@@ -56,29 +56,31 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 2
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.xpr} [current_project]
+set_property webtalk.parent_dir E:/Github/RISC-V/project_1/project_1.cache/wt [current_project]
+set_property parent.project_path E:/Github/RISC-V/project_1/project_1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo {c:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.cache/ip} [current_project]
+set_property ip_output_repo e:/Github/RISC-V/project_1/project_1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALU.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ALUControl.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/BranchCompare.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v}
-  {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/sources_1/new/RISCV.v}
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALU.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ALUControl.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/BranchCompare.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/InstructionDecode.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramCounter.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/ProgramMemory.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RegisterFileRead.v
+  E:/Github/RISC-V/project_1/project_1.srcs/sources_1/new/RISCV.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -91,7 +93,7 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 }
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/limbo/Documents/GitHub/RISC V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp}
+read_checkpoint -auto_incremental -incremental E:/Github/RISC-V/project_1/project_1.srcs/utils_1/imports/synth_1/adder.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
