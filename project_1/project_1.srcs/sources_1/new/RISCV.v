@@ -3,7 +3,7 @@
 
 module RISCV(
     input  wire clk
-    , output wire [31:0] debug_pc, debug_instruction, debug_imm
+    , output wire [31:0] debug_imm
     , output wire [6:0] debug_funct7, debug_opcode
     , output wire [4:0]  debug_rs1, debug_rs2, debug_rd
     , output wire [2:0] debug_funct3
@@ -118,8 +118,6 @@ module RISCV(
     );
 
     // Optional: tie out debug ports if you add them to the top
-    assign debug_pc      = pc;
-    assign debug_instruction = instruction;
     assign debug_funct7      = funct7;
     assign debug_opcode = opcode;
     assign debug_rd = rd;
