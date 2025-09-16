@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is_b_code);
+module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
     input wire [31:0] instruction;
     
     output reg [7:0] funct7;
@@ -10,8 +10,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is
     output reg [4:0] rd;
     output reg [6:0] opcode;
     output reg [31:0] imm;
-    output wire is_b;
-    output reg [2:0] is_b_code;
+    output reg RType;
     
     initial begin
         funct7 = 0;
@@ -21,7 +20,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is
         rd = 0;
         opcode = 0;
         imm = 0;
-        is_b_code = 0;
+        RType = 0;
     end
     
 
@@ -33,7 +32,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is
         rs2 <= 0;
         funct7 <= 0;
         imm <= 0;
-        is_b_code <= 3'b000;
+        RType <= 0;
          
         opcode  = instruction[6:0];
       
@@ -44,6 +43,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is
             rs1 <= instruction[19:15];
             rs2 <= instruction[24:20];
             funct7 <= instruction[31:25];
+            RType <= 1;
        end
        
        //I Type
@@ -89,12 +89,9 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,is_b,is
     
         imm <= {{19{instruction[31]}}, instruction[31], instruction[7], instruction[30:25], instruction[11:8], 1'b0};
 
-        is_b_code <= instruction[14:12]; // Matches your BranchCompare selector
         end
       
     end
-    
-    assign is_b = (instruction[6:2] == 5'b11_000);  // Only true for B-type (branches)
     
     
 endmodule

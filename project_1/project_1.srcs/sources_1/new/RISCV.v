@@ -33,6 +33,7 @@ module RISCV(
     (* mark_debug = "true" *) wire [31:0] alu_out;
 
     wire IType;
+    wire RType;
 
     // =========================================================================
     // Minimal next-PC so PC advances (prevents X/pruning). Replace with your
@@ -70,14 +71,15 @@ module RISCV(
         .funct3      (funct3),
         .rd          (rd),
         .opcode      (opcode),
-        .imm         (imm)
+        .imm         (imm),
+        .RType       (RType)
     );
 
     // Register File
     // NOTE: write_enable=0 disables writes; consider driving it from control.
     RegisterFileRead u_rfr (
         .clk            (clk),
-        .write_enable   ((IType) ? 1'b1 : 1'b0),
+        .write_enable   ((IType || RType) ? 1'b1 : 1'b0),
         .write_address  (rd),
         .write_data     (alu_out),
         .read_enable_1 ((IType) ? 1'b0 : 1'b1),
