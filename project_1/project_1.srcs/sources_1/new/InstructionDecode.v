@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
+module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType, JType);
     input wire [31:0] instruction;
     
     output reg [7:0] funct7;
@@ -11,6 +11,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
     output reg [6:0] opcode;
     output reg [31:0] imm;
     output reg RType;
+    output reg JType;
     
     initial begin
         funct7 = 0;
@@ -21,6 +22,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
         opcode = 0;
         imm = 0;
         RType = 0;
+        JType = 0;
     end
     
 
@@ -33,6 +35,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
         funct7 <= 0;
         imm <= 0;
         RType <= 0;
+        JType <= 0;
          
         opcode  = instruction[6:0];
       
@@ -77,7 +80,7 @@ module InstructionDecode(instruction,funct7,rs2,rs1,funct3,rd,opcode,imm,RType);
             rd <= instruction[11:7];
             
             imm <= {{11{instruction[31]}}, instruction[31], instruction[19:12], instruction[20], instruction[30:21], 1'b0};
-
+            JType <= 1;
        end
        
        //B Type

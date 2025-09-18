@@ -34,6 +34,7 @@ module RISCV(
 
     wire IType;
     wire RType;
+    wire JType;
 
     // =========================================================================
     // Minimal next-PC so PC advances (prevents X/pruning). Replace with your
@@ -72,7 +73,8 @@ module RISCV(
         .rd          (rd),
         .opcode      (opcode),
         .imm         (imm),
-        .RType       (RType)
+        .RType       (RType),
+        .JType       (JType)
     );
 
     // Register File
