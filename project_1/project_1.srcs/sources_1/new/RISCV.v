@@ -44,7 +44,8 @@ module RISCV(
     // wire [31:0] br_tgt   = pc + imm;
     // assign pc_next = taken_br ? br_tgt : pc_plus4;
     // For now, keep it simple:
-    assign pc_next = pc + 1;
+    assign pc_next = (opcode == 7'b1100111) ? (rs1 + imm) : (pc + 1'b1);
+
     // =========================================================================
 
     // Program Counter
