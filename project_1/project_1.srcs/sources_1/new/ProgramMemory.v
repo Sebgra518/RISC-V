@@ -10,27 +10,12 @@ module ProgramMemory(address, programOut);
     always @(*) begin
         case (address)
            32'd0:  programOut = 32'h00000000;
-           32'd1:  programOut = 32'b00000111101100000000001010010011; //addi x5, x0, 123
-           32'd2:  programOut = 32'b00000000101000110000001010010011; //addi x6, x5, 5
-           32'd3:  programOut = 32'b00000000010100101010010000010011; //slti x8, x5, 5
-           32'd4:  programOut = 32'b00000110010000101011010010010011; //sltiu x9, x5, 100
-           32'd5:  programOut = 32'b00000001010000101100010100010011; //xori x10, x5, 20
-           32'd6:  programOut = 32'b00000000111100101110010110010011; //ori x11, x5, 15
-           32'd7:  programOut = 32'b00000000110000101111011000010011; //andi x12, x5, 12
-           32'd8:  programOut = 32'b00000000001100101001011010010011;//SLLI x13, x5, 3
-           32'd9:  programOut = 32'b01000000000100101101011100010011;//SRAI x14, x5, 1
-           
-           32'd10: programOut = 32'b00000000000000101000011110000011;//lb x15, 0(x5) (8bit)
-           32'd11: programOut = 32'b00000000000000101001100000000011;// lh x16, 0(x5) (16bit)
-           32'd12: programOut = 32'b00000000000000101010100010000011;//LW x17, 0(x5) (32bit)
-           32'd13: programOut = 32'b00000000000000101100100100000011;//LBU x18, 0(x5)
-           32'd14: programOut = 32'b00000000000000101101100110000011;//LHU x19, 0(x5)
-           32'd15: programOut = 32'b00000000000010100000000001100111;//jalr x0, 0(x20)
-           32'd16: programOut = 32'h00000000;
-           32'd17: programOut = 32'h00000000;
-           32'd18: programOut = 32'h00000000;
-           32'd19: programOut = 32'h00000000;
-           32'd20: programOut = 32'h00000000;
+           32'd1:  programOut = 32'h01b00293;
+           32'd2:  programOut = 32'h00f00313;
+           32'd3:  programOut = 32'h006283b3;
+           32'd4:  programOut = 32'h00010e37;
+           32'd5:  programOut = 32'h000e0e13;
+           32'd6:  programOut = 32'h007e2023;
           default: programOut = 0;
         endcase
     end

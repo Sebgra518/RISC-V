@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Tue Sep 16 14:03:28 2025
+| Date         : Thu Oct 30 13:35:37 2025
 | Host         : BingBong running 64-bit major release  (build 9200)
 | Command      : report_utilization -file RISCV_utilization_synth.rpt -pb RISCV_utilization_synth.pb
 | Design       : RISCV
@@ -31,8 +31,8 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*                |  606 |     0 |          0 |     63400 |  0.96 |
-|   LUT as Logic             |  558 |     0 |          0 |     63400 |  0.88 |
+| Slice LUTs*                |  645 |     0 |          0 |     63400 |  1.02 |
+|   LUT as Logic             |  597 |     0 |          0 |     63400 |  0.94 |
 |   LUT as Memory            |   48 |     0 |          0 |     19000 |  0.25 |
 |     LUT as Distributed RAM |   48 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
@@ -151,17 +151,17 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  341 |                 LUT |
+| LUT6     |  380 |                 LUT |
 | OBUF     |  165 |                  IO |
-| LUT4     |   99 |                 LUT |
-| LUT2     |   69 |                 LUT |
+| LUT4     |  100 |                 LUT |
+| LUT2     |   70 |                 LUT |
 | RAMD32   |   68 |  Distributed Memory |
-| LUT5     |   60 |                 LUT |
-| LUT3     |   55 |                 LUT |
+| LUT5     |   64 |                 LUT |
+| LUT3     |   57 |                 LUT |
 | FDCE     |   32 |        Flop & Latch |
 | CARRY4   |   32 |          CarryLogic |
 | RAMS32   |   20 |  Distributed Memory |
-| LUT1     |   20 |                 LUT |
+| LUT1     |   13 |                 LUT |
 | MUXF7    |    2 |               MuxFx |
 | LDCE     |    1 |        Flop & Latch |
 | IBUF     |    1 |                  IO |
